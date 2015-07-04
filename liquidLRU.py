@@ -56,7 +56,6 @@ class Cache:
     def ScanPurge(self):
         for i in self.Cache.keys():
             if self.Cache[i].Expired():
-                print "Purged: %s" % i
                 self.Remove(i)
 
         Timer(self.PurgeTime, self.ScanPurge).start()
